@@ -1,5 +1,8 @@
 pipeline {
-
+environment {
+    dockerimagename = "nginx/nginx:latest"
+    dockerImage = ""
+  }
   agent any
 
   stages {
