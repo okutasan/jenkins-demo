@@ -8,7 +8,6 @@ environment {
   stages {
 
     stage('Deploying App to Kubernetes') {
-      steps {
         podTemplate {
     node(POD_LABEL) {
         stage('Run shell') {
@@ -16,7 +15,7 @@ environment {
         }
     }
 }
-      }
+
     }
 
   }
