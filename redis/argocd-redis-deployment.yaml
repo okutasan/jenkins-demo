@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/component: redis
   name: argocd-redis
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-redis
