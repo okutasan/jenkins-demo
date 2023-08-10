@@ -1,7 +1,5 @@
-        podTemplate {
-    node(POD_LABEL) {
-        stage('Run shell') {
-            sh 'echo hello world'
-        }
-    }
+podTemplate(yaml: readTrusted('nginx.yaml')) {
+  node(POD_LABEL) {
+
+  }
 }
