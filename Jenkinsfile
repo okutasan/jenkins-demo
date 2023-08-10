@@ -3,7 +3,11 @@ pipeline {
   agent any
 
   stages {
-    
+       stage('Checkout Source') {
+      steps {
+        git 'https://github.com/okutasan/jenkins-demo'
+      }
+    }
     stage('Deploying App to Kubernetes') {
       steps {
         script {
