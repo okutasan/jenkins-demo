@@ -1,5 +1,7 @@
-podTemplate(yaml: readTrusted('nginx.yaml')) {
-  node(POD_LABEL) {
-
+node {
+  stage('Apply Kubernetes files') {
+    withKubeConfig([credentialsId: 'kubernetes', serverUrl: 'oktaresear-oktaresearch-2433c1-eushg56k.hcp.southeastasia.azmk8s.io']) {
+      sh 'kubectl apply -f nginx.yaml'
+    }
   }
 }
