@@ -9,9 +9,13 @@ environment {
 
     stage('Deploying App to Kubernetes') {
       steps {
-        script {
-          kubernetesDeploy(configs: "nginx.yaml", kubeconfigId: "kubernetes")
+        podTemplate {
+    node(POD_LABEL) {
+        stage('Run shell') {
+            sh 'echo hello world'
         }
+    }
+}
       }
     }
 
